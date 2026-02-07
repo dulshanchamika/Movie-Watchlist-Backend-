@@ -4,6 +4,7 @@ import { connectDB, disconnectDB } from './config/db.js';
 
 import movieRoutes from './routes/movieRoutes.js';
 import authRoutes from './routes/authRoutes.js';
+import watchlistRoutes from './routes/watchlistRoutes.js';
 
 config();
 connectDB();
@@ -19,6 +20,7 @@ const PORT = process.env.PORT;
 //API routes
 app.use('/movies', movieRoutes);
 app.use('/auth', authRoutes);
+app.use('/watchlist', watchlistRoutes);
 
 app.get('/hello', (req, res) => {
     res.json({ message: 'Hello, Worlds!' });
